@@ -1,0 +1,13 @@
+﻿@model IEnumerable<VendasDeLanches.Models.Lanche>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@foreach(var item in Model)
+{
+    <h4>@item.LancheNome</h4>
+    <p>@item.Descricao</p>
+    <p>@item.Preco</p>
+    <img src="~/imagens/@item.ImagemUrl" />
+}
