@@ -3,7 +3,6 @@ using LanchesVendas.Repositories;
 using LanchesVendas.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -11,7 +10,6 @@ builder.Services.AddDbContext<AplicandoDbContext>(option => option.UseMySql(buil
                                                   ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))));
 builder.Services.AddTransient<ILancheRepository, LancheRepository>();
 builder.Services.AddControllersWithViews();
-
 
 var app = builder.Build();
 

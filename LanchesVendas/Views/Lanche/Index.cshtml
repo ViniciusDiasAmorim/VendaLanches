@@ -3,11 +3,21 @@
 @{
     ViewData["Title"] = "Index";
 }
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-4 col-md-4 col-lg-4" style="border: 1px solid black">
+                <h3>@item.LancheNome</h3>
 
-@foreach(var item in Model)
-{
-    <h4>@item.LancheNome</h4>
-    <p>@item.Descricao</p>
-    <p>@item.Preco</p>
-    <img src="~/imagens/@item.ImagemUrl" />
-}
+                <p style="font-size:20px">Categoria: @item.Categoria.CategoriaNome</p>
+
+                <img src="~/imagens/@item.ImagemUrl" class="img-fluid" />
+
+                <p>Descriçao: @item.Descricao</p>
+
+                <p style="font-size:22px">Valor: R$@item.Preco</p>
+            </div>
+        }
+    </div>
+</div>

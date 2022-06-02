@@ -1,5 +1,6 @@
 ﻿using LanchesVendas.Context;
 using LanchesVendas.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using VendasDeLanches.Models;
 
 namespace LanchesVendas.Repositories
@@ -13,9 +14,9 @@ namespace LanchesVendas.Repositories
             _context = context;
         }
 
-        public IEnumerable<Lanche> Lanches => _context.Lanches;
+        public IEnumerable<Lanche> Lanches => _context.Lanches.Include(x => x.Categoria);
 
-        public IEnumerable<Lanche> LanchesDoDia => _context.Lanches.Where(x => x.LancheDoDia == true);
+        public IEnumerable<Lanche> LanchesDoDia => _context.Lanches.Where(x => x.LancheDoDia == true).Include(x => x.Categoria);
 
         public Lanche GetLancheById(int lancheId)
         {
