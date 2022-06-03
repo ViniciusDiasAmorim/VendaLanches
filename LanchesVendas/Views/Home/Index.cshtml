@@ -3,7 +3,7 @@
 }
 @model IEnumerable<VendasDeLanches.Models.Lanche>
 
-<div id="carouselVendasHome" class="carousel slide carousel-fade" data-bs-ride="carousel">
+<section id="carouselVendasHome" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -40,19 +40,21 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
-</div>
+</section>
 
-<h2>Confira os mais pedidos do dia</h2>
-<div class="container">
+<section class="container" style="background-color:#282f39;color:white;margin-top:25px">
     <div class="row">
+
+        <h2>Confira os mais pedidos do dia:</h2>
+
         @foreach (var item in Model)
         {
-            <div class="col-sm-4 col-md-4 col-lg-4" style="border: 1px solid black">
+            <div class="col-sm-4 col-md-4 col-lg-4" style="border: 1px solid white">
+                <img src="~/imagens/@item.ImagemUrl" class="img-fluid" style="max-width:200px;max-height:200px" />
+
                 <h3>@item.LancheNome</h3>
 
                 <p style="font-size:20px">Categoria: @item.Categoria.CategoriaNome</p>
-
-                <img src="~/imagens/@item.ImagemUrl" class="img-fluid" style="max-width:200px;max-height:200px"/>
 
                 <p>Descriçao: @item.Descricao</p>
 
@@ -60,4 +62,47 @@
             </div>
         }
     </div>
-</div>
+</section>
+
+<section class="container mb-5" style="margin-top:25px;background-color:#282f39;color:white">
+    <h2>Sobre nós</h2>
+    <img src="~/imagens/imgAboutUs.jpg" style="max-width:200px;max-height:200px;float:left;margin-right:15px" />
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.Provident repellendus laborum quas quod maxime impedit non ratione saepe vitae,
+        rerum corrupti optio sunt aperiam suscipit. Fugiat, quo? Obcaecati, aut vero.Lorem ipsum dolor sit amet consectetur adipisicing elit.Provident repellendus laborum quas quod maxime impedit non ratione saepe vitae,
+        rerum corrupti optio sunt aperiam suscipit. Fugiat, quo? Obcaecati, aut vero.Lorem ipsum dolor sit amet consectetur adipisicing elit.Provident repellendus laborum quas quod maxime impedit non ratione saepe vitae,
+        rerum corrupti optio sunt aperiam suscipit. Fugiat, quo? Obcaecati, aut vero.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.Provident repellendus laborum quas quod maxime impedit non ratione saepe vitae,
+        rerum corrupti optio sunt aperiam suscipit. Fugiat, quo? Obcaecati, aut vero.Lorem ipsum dolor sit amet consectetur adipisicing elit.Provident repellendus laborum quas quod maxime impedit non ratione saepe vitae,
+        rerum corrupti optio sunt aperiam suscipit. Fugiat, quo? Obcaecati, aut vero.Lorem ipsum dolor sit amet consectetur adipisicing elit.Provident repellendus laborum quas quod maxime impedit non ratione saepe vitae,
+        rerum corrupti optio sunt aperiam suscipit. Fugiat, quo? Obcaecati, aut vero.Lorem ipsum dolor sit amet consectetur adipisicing elit.Provident repellendus laborum quas quod maxime impedit non ratione saepe vitae,
+        rerum corrupti optio sunt aperiam suscipit. Fugiat, quo? Obcaecati, aut vero.
+    </p>
+</section>
+
+<section style="margin-bottom:100px;background-color:#282f39;color:white">
+    <div style="margin-left:5px">
+        <h3>Localizaçao</h3>
+        <p>Nosso estabelecimento esta localizado no coraçao da cidade. Com uma excelente estrutura, tudo regulamentado e pronto pra atender aos seus pedidos.</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58503.19744076331!2d-46.70236974179688!3d-23.5881948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a2b2ed7f3a1%3A0xab35da2f5ca62674!2sCaelum%20-%20Escola%20de%20Tecnologia!5e0!3m2!1spt-BR!2sbr!4v1649781020257!5m2!1spt-BR!2sbr"
+                width="1285" height="400" style="border:0; border-radius: 5px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <h3>
+            Desejamos ouvir oque tem a dizer
+        </h3>
+        <p>
+            Se tiver alguma duvida ou sugestão fale com a gente pelos contatos listadas abaixo.
+        </p>
+        <div>
+            <img src="~/imagens/e-mail.png" style="max-width:250px;max-height:250px"/>&nbsp;Envie um Email para a gente, iremos adorar ler oque tem a dizer.
+            <a href="mailto:viniragh@gmail.com">Clique aqui </a>ou se preferir viniragh@gmail.com
+        </div>
+        <div style="">
+            <img src="~/imagens/telefone.png" style="max-width:250px;max-height:250px;margin-bottom:25px;" />&nbsp;Ligue para a gente, iremos adorar ouvir oque tem a dize.
+            <a href="tel:xx xxxx xxxx">Clique aqui </a>ou se preferir (11) 9999-8888
+        </div>
+
+
+    </div>
+</section>

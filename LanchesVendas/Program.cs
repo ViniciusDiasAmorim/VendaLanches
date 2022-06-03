@@ -9,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AplicandoDbContext>(option => option.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
                                                   ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))));
 builder.Services.AddTransient<ILancheRepository, LancheRepository>();
+builder.Services.AddTransient<ICategoriaRepository, CategoriaReposiory>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

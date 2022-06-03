@@ -18,7 +18,7 @@ namespace LanchesVendas.Migrations
                 "VALUES('X-Salada','8.99','X-Salada padrao ouro da casa uma delicia!!!','14.jpg',0,1)");
           
             migrationBuilder.Sql("INSERT INTO Lanches(LancheNome,Preco,Descricao,ImagemUrl,LancheDoDia,CategoriaId)" +
-                "VALUES('Lanche Natural','7.99','Lanche feito com ingredientes naturais','08.jpg',1,2)");
+                "VALUES('Lanche Natural','7.99','Lanche feito com ingredientes naturais','08.jpg',0,2)");
             migrationBuilder.Sql("INSERT INTO Lanches(LancheNome,Preco,Descricao,ImagemUrl,LancheDoDia,CategoriaId)" +
                 "VALUES('X-burguer Natural','10.50','O mais pedido dos normais na forma natural','05.jpg',0,2)");
             migrationBuilder.Sql("INSERT INTO Lanches(LancheNome,Preco,Descricao,ImagemUrl,LancheDoDia,CategoriaId)" +
@@ -31,7 +31,7 @@ namespace LanchesVendas.Migrations
             migrationBuilder.Sql("INSERT INTO Lanches(LancheNome,Preco,Descricao,ImagemUrl,LancheDoDia,CategoriaId)" +
                 "VALUES('Vegano-Tudo','32.99','Lanche VEGANO com tudo e mais um pouco delicioso','16.jpg',0,3)");
             migrationBuilder.Sql("INSERT INTO Lanches(LancheNome,Preco,Descricao,ImagemUrl,LancheDoDia,CategoriaId)" +
-                "VALUES('X-Naturalzão','25.99','Lanche natural super saudavel e delicioso','19.jpg',1,3)");
+                "VALUES('X-Naturalzão','25.99','Lanche natural super saudavel e delicioso','19.jpg',0,3)");
             migrationBuilder.Sql("INSERT INTO Lanches(LancheNome,Preco,Descricao,ImagemUrl,LancheDoDia,CategoriaId)" +
                 "VALUES('X-Normalzão','25.99','Lanche feito de com ingredientes normais e de forma super normal','10.jpg',1,3)");
 
@@ -45,9 +45,9 @@ namespace LanchesVendas.Migrations
             migrationBuilder.Sql("INSERT INTO Lanches(LancheNome,Preco,Descricao,ImagemUrl,LancheDoDia,CategoriaId)" +
                "VALUES('Coca-Cola lata 450ml','4.99','Refrigerante geladinho','21.jpg',1,5)");
             migrationBuilder.Sql("INSERT INTO Lanches(LancheNome,Preco,Descricao,ImagemUrl,LancheDoDia,CategoriaId)" +
-               "VALUES('Pepsi lata 450ml','4.99','Refrigerante geladinho','22.jpg',1,5)");
+               "VALUES('Pepsi lata 450ml','4.99','Refrigerante geladinho','22.jpg',0,5)");
             migrationBuilder.Sql("INSERT INTO Lanches(LancheNome,Preco,Descricao,ImagemUrl,LancheDoDia,CategoriaId)" +
-              "VALUES('Suco de Laranja','7.99','Suco natural de laranja gelado','23.jpg',1,5)");
+              "VALUES('Suco de Laranja','7.99','Suco natural de laranja gelado','23.jpg',0,5)");
             migrationBuilder.Sql("INSERT INTO Lanches(LancheNome,Preco,Descricao,ImagemUrl,LancheDoDia,CategoriaId)" +
               "VALUES('Suco de Uva','8.99','Suco natural de uva gelado','24.jpg',0,5)");
             migrationBuilder.Sql("INSERT INTO Lanches(LancheNome,Preco,Descricao,ImagemUrl,LancheDoDia,CategoriaId)" +
