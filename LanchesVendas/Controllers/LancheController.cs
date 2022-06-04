@@ -7,31 +7,44 @@ namespace LanchesVendas.Controllers
     {
         private readonly ILancheRepository _lancheRepository;
 
-        private readonly ICategoriaRepository _categoriaRepository;
-
-        public LancheController(ILancheRepository lancheRepository, ICategoriaRepository categoriaRepository)
+        public LancheController(ILancheRepository lancheRepository)
         {
             _lancheRepository = lancheRepository;
-            _categoriaRepository = categoriaRepository;
         }
 
         public IActionResult Index()
         {
             var lanchesNome = _lancheRepository.Lanches;
+          
+            ViewBag.ProcuraLanche = "Todos os lanches";
 
             return View(lanchesNome);
         }
-
+     
         public IActionResult Categoria(int id)
         {
             var categoriaLanches = _lancheRepository.Lanches.Where(x => x.CategoriaId == id);
 
-            var categorias = _categoriaRepository.Categorias.FirstOrDefault(x => x.CategoriaId == id);
+            var categoria = _lancheRepository.Lanches.FirstOrDefault(x => x.CategoriaId == id);
 
-            ViewBag.Categorias = categorias.CategoriaNome;
+            ViewBag.Categorias = categoria.Categoria.CategoriaNome;
 
             return View(categoriaLanches);
-
+        }
+        public IActionResult ProcuraLanche(string stringProcura)
+        {
+            if (string.IsNullOrEmpty(stringProcura))
+            {
+                var lancheProcurado = _lancheRepository.Lanches;
+                ViewBag.ProcuraLanche = "Todos os lanches";
+                return View("~/Views/Lanche/Index.cshtml", lancheProcurado);
+            }
+            else
+            {
+                var lancheProcurado = _lancheRepository.Lanches.Where(x => x.LancheNome.ToLower().Contains(stringProcura.ToLower()));
+                ViewBag.ProcuraLanche = stringProcura;
+                return View("~/Views/Lanche/Index.cshtml", lancheProcurado);
+            }
         }
     }
 }

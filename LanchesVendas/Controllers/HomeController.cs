@@ -5,16 +5,16 @@ namespace LanchesVendas.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILancheRepository _lancherepository;
+        private readonly ILancheRepository _lancheRepository;
 
         public HomeController(ILancheRepository lancherepository)
         {
-            _lancherepository = lancherepository;
+            _lancheRepository = lancherepository;
         }
 
         public IActionResult Index()
         {
-            var lancheDoDia = _lancherepository.LanchesDoDia;
+            var lancheDoDia = _lancheRepository.LanchesDoDia;
 
             return View(lancheDoDia);
         }

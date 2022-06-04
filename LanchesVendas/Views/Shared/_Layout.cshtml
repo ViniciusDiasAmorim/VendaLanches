@@ -13,7 +13,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-black bg-black border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-controller="Home" asp-action="Index"><img src="~/imagens/hamburguer.png" style="max-width:30px;max-height:30px"/></a>
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index"><img src="~/imagens/hamburguer.png" style="max-width:30px;max-height:30px" /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -24,8 +24,32 @@
                             <a class="nav-link text-white" style="margin-left:30px" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" style="margin-left:30px" asp-controller="Lanche" asp-action="Index">Lanches</a>
-                        </li>
+                            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" style="margin-left:30px;color:white" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Lanches
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                                            <li>
+                                                <a class="nav-link text-white" style="margin-left:30px" asp-controller="Lanche" asp-action="Index">Todos os Lanches</a>
+                                            </li>
+                                            <li>
+                                                <form asp-controller="Lanche" asp-action="ProcuraLanche" method="get">
+                                            <li>
+                                                <div class="input-group mt-2 mx-2">
+                                                    <div class="form-outline">
+                                                        <input type="search" id="form1" class="form-control-dropdown" name="stringProcura" />
+                                                        <label class="form-label" for="form1">Procure por um Lanche</label>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            </form>
+
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
                         <li>
                             <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                                 <ul class="navbar-nav">
@@ -34,6 +58,7 @@
                                             Categorias
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+
                                             <li><a class="dropdown-item" asp-controller="Lanche" asp-action="Categoria" asp-route-id="1">Normais</a></li>
                                             <li><a class="dropdown-item" asp-controller="Lanche" asp-action="Categoria" asp-route-id="2">Naturais</a></li>
                                             <li><a class="dropdown-item" asp-controller="Lanche" asp-action="Categoria" asp-route-id="3">Especiais</a></li>
@@ -54,21 +79,21 @@
             @RenderBody()
         </main>
     </div>
-     <footer class="border-top footer bg-black text-center text-white">
-  <div class="container">
-    <section>
-      <a class="btn btn-outline-light btn-floating" href="https://www.linkedin.com/in/vinicius-dias-a8495b236/" role="button"
-        ><i class="fab fa-linkedin-in"><img src="~/imagens/linkedin.png"/></i
-      ></a>
-      <a class="btn btn-outline-light btn-floating" href="https://github.com/ViniciusDiasAmorim/VendaLanches" role="button"
-        ><i class="fab fa-github"><img src="~/imagens/github2.png" style="max-widh:32px;max-height:32px"/></i
-      ></a>
-    </section>
-  </div>
-  <div class="text-center" style="background-color:gba(0, 0, 0, 0.2);">
-    © 2020 - Criado por Vinicius Dias
-  </div>
-  </footer>
+    <footer class="border-top footer bg-black text-center text-white">
+        <div class="container">
+            <section>
+                <a class="btn btn-outline-light btn-floating" href="https://www.linkedin.com/in/vinicius-dias-a8495b236/" role="button">
+                    <i class="fab fa-linkedin-in"><img src="~/imagens/linkedin.png" /></i>
+                </a>
+                <a class="btn btn-outline-light btn-floating" href="https://github.com/ViniciusDiasAmorim/VendaLanches" role="button">
+                    <i class="fab fa-github"><img src="~/imagens/github2.png" style="max-widh:32px;max-height:32px" /></i>
+                </a>
+            </section>
+        </div>
+        <div class="text-center" style="background-color:gba(0, 0, 0, 0.2);">
+            © 2020 - Criado por Vinicius Dias
+        </div>
+    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
