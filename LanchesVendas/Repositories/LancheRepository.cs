@@ -1,7 +1,7 @@
 ﻿using LanchesVendas.Context;
 using LanchesVendas.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using VendasDeLanches.Models;
+using LanchesVendas.Models;
 
 namespace LanchesVendas.Repositories
 {

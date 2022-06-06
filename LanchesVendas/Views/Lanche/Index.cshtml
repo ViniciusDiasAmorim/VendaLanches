@@ -1,4 +1,4 @@
-﻿@model IEnumerable<VendasDeLanches.Models.Lanche>
+﻿@model IEnumerable<LanchesVendas.Models.Lanche>
 
 @{
     ViewData["Title"] = "Lanches";
@@ -19,6 +19,8 @@
                 <p>Descriçao: @item.Descricao</p>
 
                 <p style="font-size:22px">Valor: R$@item.Preco</p>
+                 <a class="btn btn-dark" asp-controller="CarrinhoDeCompra" asp-action="AdicionarItemAoCarrinho" asp-route-lancheId="@item.LancheId">
+                Incluir @item.LancheNome no Carrinho</a>
             </div>
         }
     </div>

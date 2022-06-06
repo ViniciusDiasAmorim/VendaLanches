@@ -18,7 +18,30 @@ namespace LanchesVendas.Migrations
                 .HasAnnotation("ProductVersion", "6.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("VendasDeLanches.Models.Categoria", b =>
+            modelBuilder.Entity("LanchesVendas.Models.CarrinhoCompraItem", b =>
+                {
+                    b.Property<int>("CarrinhoCompraItemId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("CarrinhoDeCompraId")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("LancheId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("int");
+
+                    b.HasKey("CarrinhoCompraItemId");
+
+                    b.HasIndex("LancheId");
+
+                    b.ToTable("CarrinhoCompraItems");
+                });
+
+            modelBuilder.Entity("LanchesVendas.Models.Categoria", b =>
                 {
                     b.Property<int>("CategoriaId")
                         .ValueGeneratedOnAdd()
@@ -39,7 +62,7 @@ namespace LanchesVendas.Migrations
                     b.ToTable("Categorias");
                 });
 
-            modelBuilder.Entity("VendasDeLanches.Models.Lanche", b =>
+            modelBuilder.Entity("LanchesVendas.Models.Lanche", b =>
                 {
                     b.Property<int>("LancheId")
                         .ValueGeneratedOnAdd()
@@ -75,9 +98,20 @@ namespace LanchesVendas.Migrations
                     b.ToTable("Lanches");
                 });
 
-            modelBuilder.Entity("VendasDeLanches.Models.Lanche", b =>
+            modelBuilder.Entity("LanchesVendas.Models.CarrinhoCompraItem", b =>
                 {
-                    b.HasOne("VendasDeLanches.Models.Categoria", "Categoria")
+                    b.HasOne("LanchesVendas.Models.Lanche", "Lanche")
+                        .WithMany()
+                        .HasForeignKey("LancheId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Lanche");
+                });
+
+            modelBuilder.Entity("LanchesVendas.Models.Lanche", b =>
+                {
+                    b.HasOne("LanchesVendas.Models.Categoria", "Categoria")
                         .WithMany("Lanches")
                         .HasForeignKey("CategoriaId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -86,7 +120,7 @@ namespace LanchesVendas.Migrations
                     b.Navigation("Categoria");
                 });
 
-            modelBuilder.Entity("VendasDeLanches.Models.Categoria", b =>
+            modelBuilder.Entity("LanchesVendas.Models.Categoria", b =>
                 {
                     b.Navigation("Lanches");
                 });

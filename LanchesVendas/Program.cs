@@ -1,4 +1,5 @@
 using LanchesVendas.Context;
+using LanchesVendas.Models;
 using LanchesVendas.Repositories;
 using LanchesVendas.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -6,10 +7,19 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AplicandoDbContext>(option => option.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
                                                   ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))));
+
 builder.Services.AddTransient<ILancheRepository, LancheRepository>();
-builder.Services.AddControllersWithViews();
+
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+builder.Services.AddScoped(x => CarrinhoDeCompra.GetCarrinho(x));
+
+builder.Services.AddMemoryCache();
+builder.Services.AddSession();
+
 
 var app = builder.Build();
 
@@ -23,7 +33,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseSession();
 app.UseRouting();
 
 app.UseAuthorization();

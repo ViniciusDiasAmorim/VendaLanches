@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace VendasDeLanches.Models
+namespace LanchesVendas.Models
 {
     public class Categoria
     {

@@ -1,4 +1,4 @@
-﻿using VendasDeLanches.Models;
+﻿using LanchesVendas.Models;
 
 namespace LanchesVendas.Repositories.Interfaces
 {

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "aHSFU6bRS07ntut9sSYU+NBtA6zbrfMmXGqbUIWDs3k=",
+  "Hash": "mZ2a8ABhRGjWtr2ztny5BCdwlEhNDnPuWmWTakM/VDo=",
   "Source": "LanchesVendas",
   "BasePath": "_content/LanchesVendas",
   "Mode": "Default",
@@ -561,6 +561,40 @@
       "OriginalItemSpec": "wwwroot\\imagens\\carousel03.jpg"
     },
     {
+      "Identity": "C:\\Users\\User\\Github\\LanchesVendas\\LanchesVendas\\wwwroot\\imagens\\carrinho.png",
+      "SourceId": "LanchesVendas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Github\\LanchesVendas\\LanchesVendas\\wwwroot\\",
+      "BasePath": "_content/LanchesVendas",
+      "RelativePath": "imagens/carrinho.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imagens\\carrinho.png"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Github\\LanchesVendas\\LanchesVendas\\wwwroot\\imagens\\carrinhopreto.png",
+      "SourceId": "LanchesVendas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Github\\LanchesVendas\\LanchesVendas\\wwwroot\\",
+      "BasePath": "_content/LanchesVendas",
+      "RelativePath": "imagens/carrinhopreto.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imagens\\carrinhopreto.png"
+    },
+    {
       "Identity": "C:\\Users\\User\\Github\\LanchesVendas\\LanchesVendas\\wwwroot\\imagens\\e-mail.png",
       "SourceId": "LanchesVendas",
       "SourceType": "Discovered",
@@ -644,6 +678,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\imagens\\linkedin.png"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Github\\LanchesVendas\\LanchesVendas\\wwwroot\\imagens\\lixeira.png",
+      "SourceId": "LanchesVendas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Github\\LanchesVendas\\LanchesVendas\\wwwroot\\",
+      "BasePath": "_content/LanchesVendas",
+      "RelativePath": "imagens/lixeira.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imagens\\lixeira.png"
     },
     {
       "Identity": "C:\\Users\\User\\Github\\LanchesVendas\\LanchesVendas\\wwwroot\\imagens\\telefone.png",
