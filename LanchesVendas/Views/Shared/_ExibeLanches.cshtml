@@ -1,0 +1,22 @@
+﻿@model LanchesVendas.Models.Lanche
+
+<div class="col-sm-4 col-md-4 col-lg-4" style="border: 1px solid black;background-color">
+    <div class="container">
+        <img src="~/imagens/@Model.ImagemUrl" class="img-fluid mt-2" />
+        <h3>@Model.LancheNome</h3>
+
+        <p style="font-size:20px">Categoria: @Model.Categoria.CategoriaNome</p>
+
+        <p>Descriçao: @Model.Descricao</p>
+
+        <p style="font-size:22px">Valor: @Model.Preco.ToString("c")</p>
+    </div>
+
+    <div class="container">
+        <p class="button">
+            <a class="btn btn-success" asp-controller="CarrinhoDeCompra" asp-action="AdicionarItemAoCarrinho" asp-route-lancheId="@Model.LancheId">
+                Incluir @Model.LancheNome no Carrinho
+            </a>
+        </p>
+    </div>
+</div>

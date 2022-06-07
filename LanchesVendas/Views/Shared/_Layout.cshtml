@@ -30,51 +30,11 @@
                             <a class="nav-link text-white" style="margin-left:30px" asp-controller="Home" asp-action="Index" asp-fragment="contatos">Contato</a>
                         </li>
                         <li class="nav-item">
-                            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                                <ul class="navbar-nav">
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" style="margin-left:30px;color:white" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Lanches
-                                        </a>
-                                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                                            <li>
-                                                <a class="nav-link text-white" style="margin-left:30px" asp-controller="Lanche" asp-action="Index">Todos os Lanches</a>
-                                            </li>
-                                            <li>
-                                                <form asp-controller="Lanche" asp-action="ProcuraLanche" method="get">
-                                            <li>
-                                                <div class="input-group mt-2 mx-2">
-                                                    <div class="form-outline">
-                                                        <label class="form-label" for="form1">Procure por um Lanche</label>
-                                                        <input type="search" id="form1" class="form-control-dropdown" name="stringProcura" />
-                                                        <input type="submit" class="btn btn-secondary mt-2" value="Procure" />
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            </form>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
+                              @await Html.PartialAsync("_LancheDropdown")
                         </li>
                         <li>
-                            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                                <ul class="navbar-nav">
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" style="margin-left:30px;color:white" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Categorias
-                                        </a>
-                                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                            @await Html.PartialAsync("_CategoriaDropdown")
 
-                                            <li><a class="dropdown-item" asp-controller="Lanche" asp-action="Categoria" asp-route-id="1">Normais</a></li>
-                                            <li><a class="dropdown-item" asp-controller="Lanche" asp-action="Categoria" asp-route-id="2">Naturais</a></li>
-                                            <li><a class="dropdown-item" asp-controller="Lanche" asp-action="Categoria" asp-route-id="3">Especiais</a></li>
-                                            <li><a class="dropdown-item" asp-controller="Lanche" asp-action="Categoria" asp-route-id="4">Vegano</a></li>
-                                            <li><a class="dropdown-item" asp-controller="Lanche" asp-action="Categoria" asp-route-id="5">Bebidas</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
                         </li>
                         <li>
                             @await Component.InvokeAsync("ExibeCarrinho")

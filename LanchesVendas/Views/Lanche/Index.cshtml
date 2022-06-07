@@ -5,23 +5,11 @@
 }
 <h1>@ViewBag.ProcuraLanche</h1>
 
-<div class="container" style="margin-bottom:100px">
+<div class="container" style="background-color:beige;margin-bottom:100px">
     <div class="row">
         @foreach (var item in Model)
         {
-            <div class="col-sm-4 col-md-4 col-lg-4" style="border: 1px solid black">
-                <img src="~/imagens/@item.ImagemUrl" class="img-fluid" />
-
-                <h3>@item.LancheNome</h3>
-
-                <p style="font-size:20px">Categoria: @item.Categoria.CategoriaNome</p>
-
-                <p>Descriçao: @item.Descricao</p>
-
-                <p style="font-size:22px">Valor: R$@item.Preco</p>
-                 <a class="btn btn-dark" asp-controller="CarrinhoDeCompra" asp-action="AdicionarItemAoCarrinho" asp-route-lancheId="@item.LancheId">
-                Incluir @item.LancheNome no Carrinho</a>
-            </div>
+            <partial name="_ExibeLanches" for="@item"></partial>
         }
     </div>
 </div>
