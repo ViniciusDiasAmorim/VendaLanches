@@ -1,5 +1,4 @@
-﻿@model IEnumerable<LanchesVendas.Models.Lanche>
-
+﻿@model LancheViewModel
 @{
     ViewData["Title"] = "Categorias";
 }
@@ -8,7 +7,7 @@
 
 <div class="container" style="background-color:beige;margin-bottom:100px">
     <div class="row">
-        @foreach (var item in Model)
+        @foreach (var item in Model.Lanches)
         {
             <partial name="_ExibeLanches" for="@item"></partial>
         }

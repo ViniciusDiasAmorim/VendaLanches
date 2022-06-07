@@ -1,4 +1,5 @@
 ﻿using LanchesVendas.Repositories.Interfaces;
+using LanchesVendas.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LanchesVendas.Controllers
@@ -16,7 +17,12 @@ namespace LanchesVendas.Controllers
         {
             var lancheDoDia = _lancheRepository.LanchesDoDia;
 
-            return View(lancheDoDia);
+            var lancheHomeVM = new HomeViewModel()
+            {
+                LanchesDoDia = lancheDoDia
+            };
+
+            return View(lancheHomeVM);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LanchesVendas.Models.Lanche>
+﻿@model HomeViewModel
 
 @{
     ViewData["Title"] = "Home Page";
@@ -48,7 +48,7 @@
 
         <h2>Confira os mais pedidos do dia:</h2>
 
-        @foreach (var item in Model)
+        @foreach (var item in Model.LanchesDoDia)
         {
             <partial name="_ExibeLanches" for="@item"></partial>
         }
@@ -86,14 +86,12 @@
             Se tiver alguma duvida ou sugestão fale com a gente pelos contatos listadas abaixo.
         </p>
         <div>
-            <img src="~/imagens/e-mail.png" style="max-width:250px;max-height:250px"/>&nbsp;Envie um Email para a gente, iremos adorar ler oque tem a dizer.
+            <img src="~/imagens/e-mail.png" style="max-width:250px;max-height:250px;" />&nbsp;&nbsp;Envie um Email para a gente, iremos adorar ler oque tem a dizer.
             <a href="mailto:viniragh@gmail.com">Clique aqui </a>ou se preferir viniragh@gmail.com
         </div>
-        <div style="">
-            <img src="~/imagens/telefone.png" style="max-width:250px;max-height:250px;margin-bottom:25px;" />&nbsp;Ligue para a gente, iremos adorar ouvir oque tem a dizer.
+        <div>
+            <img src="~/imagens/telefone.png" style="max-width:250px;max-height:250px;margin-bottom:25px;" />&nbsp;&nbsp;Ligue para a gente, iremos adorar ouvir oque tem a dizer.
             <a href="tel:xx xxxx xxxx">Clique aqui </a>ou se preferir (11) 9999-8888
         </div>
-
-
     </div>
 </section>
