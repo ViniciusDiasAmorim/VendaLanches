@@ -12,6 +12,7 @@ builder.Services.AddDbContext<AplicandoDbContext>(option => option.UseMySql(buil
                                                   ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))));
 
 builder.Services.AddTransient<ILancheRepository, LancheRepository>();
+builder.Services.AddTransient<IPedidoRepository, PedidoRepository>();
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 

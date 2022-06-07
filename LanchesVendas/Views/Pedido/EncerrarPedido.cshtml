@@ -1,0 +1,48 @@
+﻿@model Pedido
+
+<form asp-action="EncerrarPedido" method="post" class="form-horizontal" role="form">
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label asp-for="ClienteNome" class="control-label">Nome</label>
+            <input asp-for="ClienteNome" class="form-control" />
+            <span asp-validation-for="ClienteNome" class="text-danger"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="ClienteSobrenome" class="control-label">Sobrenome</label>
+            <input asp-for="ClienteSobrenome" class="form-control" />
+            <span asp-validation-for="ClienteSobrenome" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label asp-for="Endereco" class="control-label">Endereço</label>
+            <input asp-for="Endereco" class="form-control" />
+            <span asp-validation-for="Endereco" class="text-danger"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="Cidade" class="control-label">Cidade</label>
+            <input asp-for="Cidade" class="form-control" />
+            <span asp-validation-for="Cidade" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label asp-for="Telefone" class="control-label">Telefone</label>
+            <input asp-for="Telefone" class="form-control" />
+            <span asp-validation-for="Telefone" class="text-danger"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="Email" class="control-label">Email</label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div>
+            <input class="btn btn-dark" type="submit" value="Concluir Pedido" />
+            &nbsp;
+            <a class="btn btn-outline-secondary" asp-controller="CarrinhoDeCompra" asp-action="Index">Retornar ao Carrinho</a>
+        </div>
+    </div>
+</form>
