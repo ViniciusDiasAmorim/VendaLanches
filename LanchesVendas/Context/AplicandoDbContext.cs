@@ -1,9 +1,11 @@
 ﻿using LanchesVendas.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace LanchesVendas.Context
 {
-    public class AplicandoDbContext : DbContext
+    public class AplicandoDbContext : IdentityDbContext<IdentityUser>
     {
         public AplicandoDbContext(DbContextOptions<AplicandoDbContext> options) : base(options)
         {

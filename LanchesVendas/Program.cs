@@ -2,6 +2,7 @@ using LanchesVendas.Context;
 using LanchesVendas.Models;
 using LanchesVendas.Repositories;
 using LanchesVendas.Repositories.Interfaces;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +18,7 @@ builder.Services.AddTransient<IPedidoRepository, PedidoRepository>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 builder.Services.AddScoped(x => CarrinhoDeCompra.GetCarrinho(x));
+builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AplicandoDbContext>().AddDefaultTokenProviders();
 
 builder.Services.AddMemoryCache();
 builder.Services.AddSession();
@@ -37,6 +39,7 @@ app.UseStaticFiles();
 app.UseSession();
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
