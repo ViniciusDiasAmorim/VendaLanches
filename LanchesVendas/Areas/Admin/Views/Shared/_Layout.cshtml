@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LanchesVendas</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/LanchesVendas.styles.css" asp-append-version="true" />
+    <link rel="shortcut icon" href="~/imagens/hamburguer.png" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-black bg-black border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                
+
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="border-top footer bg-black text-center text-white">
+        <div class="container">
+            <section>
+                <a class="btn btn-outline-light btn-floating" href="https://www.linkedin.com/in/vinicius-dias-a8495b236/" target="_blank" role="button">
+                    <i class="fab fa-linkedin-in"><img src="~/imagens/linkedin.png" /></i>
+                </a>
+                <a class="btn btn-outline-light btn-floating" href="https://github.com/ViniciusDiasAmorim/VendaLanches" target="_blank" role="button">
+                    <i class="fab fa-github"><img src="~/imagens/github2.png" style="max-widh:32px;max-height:32px" /></i>
+                </a>
+            </section>
+        </div>
+        <div class="text-center">
+            © 2020 - Criado por Vinicius Dias
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

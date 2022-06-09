@@ -10,7 +10,6 @@ namespace LanchesVendas.ViewModel
         [Required(ErrorMessage = "Infome a senha")]
         [DataType(DataType.Password)]
         public string Senha { get; set; }
-        [ValidateNever]
         public string ReturnUrl { get; set; }
     }
 }

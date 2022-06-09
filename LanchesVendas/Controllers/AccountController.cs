@@ -48,6 +48,11 @@ namespace LanchesVendas.Controllers
             ModelState.AddModelError("", "Erro ao efetuar login");
             return View(login);
         }
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return View("Index", "Home");
+        }
 
     }
 }

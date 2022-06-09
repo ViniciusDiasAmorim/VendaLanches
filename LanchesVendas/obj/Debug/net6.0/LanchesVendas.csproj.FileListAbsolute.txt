@@ -268,3 +268,4 @@ C:\Users\User\Github\LanchesVendas\LanchesVendas\bin\Debug\net6.0\Microsoft.AspN
 C:\Users\User\Github\LanchesVendas\LanchesVendas\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\User\Github\LanchesVendas\LanchesVendas\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\User\Github\LanchesVendas\LanchesVendas\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\User\Github\LanchesVendas\LanchesVendas\obj\Debug\net6.0\scopedcss\Areas\Admin\Views\Shared\_Layout.cshtml.rz.scp.css
