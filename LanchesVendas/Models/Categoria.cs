@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
 
 namespace LanchesVendas.Models
 {
@@ -14,6 +15,7 @@ namespace LanchesVendas.Models
         [Required(ErrorMessage = "Informe uma descrição para a categoria")]
         [StringLength(200, MinimumLength = 5, ErrorMessage = "A descrição deve ter entre 5 e 200 caracteres")]
         public string CategoriaDescricao { get; set; }
+        [ValidateNever]
         public List<Lanche> Lanches { get; set; }
     }
 }

@@ -42,7 +42,6 @@ namespace LanchesVendas.Services
                 {
                     _userManager.AddToRoleAsync(user, "Admin").Wait();
                 }
-
             }
         }
     }

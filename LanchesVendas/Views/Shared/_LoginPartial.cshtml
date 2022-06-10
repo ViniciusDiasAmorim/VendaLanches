@@ -4,19 +4,27 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-    <form asp-area="" asp-controller="Account" asp-action="Logout" id="logoutForm"
-      method="post" class="navbar-left">
-        <ul class="nav navbar-nav navbar-left">
-            <button type="submit" style="width:auto" class="nav-link btn btn-link py-0">
-                Sair : @User.Identity.Name &nbsp;
-            </button>
+    <div class="nav navbar-nav navbar-left" id="dropdowLogin">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" style="margin-left:30px;color:white" id="dropdowLoginLinks" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Administração
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
 
-            @if (User.IsInRole("Admin"))
-            {
-                <a class="nav-link text-light" asp-area="Admin" asp-controller="Admin" asp-action="Index">Admin</a>
-            }
+                    <form asp-area="" asp-controller="Account" asp-action="Logout" id="logoutForm" method="post" class="navbar-left">
+                    <li>
+                        <a class="nav-link text-light" asp-area="Admin" asp-controller="Admin" asp-action="Index">Area do admin</a>
+                    </li>
+                    <li>
+                        <button type="submit" style="width:auto" class="nav-link btn btn-link py-0">
+                            Sair
+                        </button>
+                    </li>
+                    </form>
+                </ul>
         </ul>
-    </form>
+    </div>
 }
 else
 {
@@ -27,4 +35,3 @@ else
         </li>
     </ul>
 }
-

@@ -51,7 +51,7 @@ namespace LanchesVendas.Controllers
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-            return View("Index", "Home");
+            return RedirectToAction("Index", "Home");
         }
 
     }
