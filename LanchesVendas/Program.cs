@@ -5,7 +5,7 @@ using LanchesVendas.Repositories.Interfaces;
 using LanchesVendas.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -47,6 +47,7 @@ void CriarPerfilUsuario(WebApplication app)
         service.SeedUsers();
     }
 }
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseSession();

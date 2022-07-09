@@ -9,6 +9,7 @@ namespace LanchesVendas.Areas.Admin.Controllers
     {
         public IActionResult Index()
         {
+            ViewData["Title"] = "AdminHome";
             return View();
         }
     }
