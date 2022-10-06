@@ -10,7 +10,7 @@ A aplicação também possui uma área de gerenciamento com operações CRUD par
 produtos sejam adicionados, alterados ou excluidos.
 
 ## Relação das Tabelas do Banco de Dados
-![Inicio da pagina](https://github.com/ViniciusDiasAmorim/ViniciusDiasAmorim/blob/main/src/vendasLancheIlustracoes/bancoDeDados.png)
+![Banco de Dados](https://github.com/ViniciusDiasAmorim/ViniciusDiasAmorim/blob/main/src/vendasLancheIlustracoes/bancoDeDados.png)
 
 ## Imagens do projeto
 
